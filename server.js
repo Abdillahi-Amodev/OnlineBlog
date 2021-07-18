@@ -4,7 +4,7 @@ require('dotenv').config()
 app.use(express.json())
 
 app.get('/',(req,res)=>{
-    res.send('Amodev online cool Amodeevvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv')
+    res.send('Amodev online cool Amododou')
 
 })
 
