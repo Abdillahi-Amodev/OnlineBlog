@@ -1,7 +1,5 @@
 .contente {
   display: flex;
-  /* justify-content: center;
-  align-items: center; */
 }
 .dashboardContente {
   display: grid;
