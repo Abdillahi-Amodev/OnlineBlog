@@ -4,10 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Dashboard</title>
 </head>
+<style>
+.contente {
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+}
+.dashboardContente{
+    display: grid;
+    grid-template-columns: repeat(3,minmax(200px,1fr));
+    grid-auto-rows: 200px;
+    grid-gap:50px;
+margin-left: 12%;
+margin-top: 10px;
+}
+.dashboardContente > div{
+    border: 1px solid black ;
+    padding: 10px;
+    
+}
+</style>
 <body>
     <%- include('header');%>
-    yes Dashboard
+    <div class="contente">
+    <%- include('SideBar');%>
+    <div class="dashboardContente">
+        
+        <div class="posts">posts</div>
+        <div class="dashboard"> dashboard </div>
+      
+        
+    </div>
+
+    </div>
 </body>
 </html>
