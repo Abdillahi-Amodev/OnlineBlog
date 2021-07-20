@@ -22,7 +22,7 @@ module.exports={
                  singlePost
              });
          } catch (error) {
-             console.log(errpr);
+             console.log(error);
 
          }
     },
@@ -32,19 +32,24 @@ module.exports={
     },
 
     getAdminDashboard:(req,res)=>{
-        res.send(' mashallah ');
+        res.send('mashallah');
     },
 
+    
     postAdmin:async(req,res)=>{
         const newPost =new Blog(req.body);
-         try {
-           const  post =await newPost.save()
-           console.log(post);
-           res.send(post)
-         } catch (error) {
-             console.log(error);
-
-         }
+        try {
+            const  post =await newPost.save()
+            console.log(post);
+            res.send(post)
+            
+        } catch (error) {
+            console.log(error);
+            
+        }
     },
-
+    
+    getAdminPost:(req,res)=>{
+        res.render('post');
+    },
 }
