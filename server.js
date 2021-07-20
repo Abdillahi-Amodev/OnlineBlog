@@ -6,9 +6,8 @@ const path = require('path')
 require('dotenv').config()
 
 
-
 app.set('view engine', 'ejs')
-app.use('/static',express.static('static'))
+app.use(express.static(__dirname+'/static'))
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 
