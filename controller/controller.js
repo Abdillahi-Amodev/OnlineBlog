@@ -15,29 +15,21 @@ module.exports={
 
          }
     },
-    getSingleBlogs:async(req,res)=>{
-         try {
-            const singlePost = await Blog.findById(req.params.id)
-             res.render('single',{
-                 singlePost
-             });
-         } catch (error) {
-             console.log(error);
-
-         }
-    },
-
+   
     getAdmin:(req,res)=>{
          res.send(' magasin ');
     },
 
     getAdminDashboard:(req,res)=>{
-        res.send('mashallah');
+        res.render('dashboard');
     },
 
     
     postAdmin:async(req,res)=>{
-        const newPost =new Blog(req.body);
+        const newPost =new Blog({
+            title:req.body.title,
+            description:req.body.description
+        });
         try {
             const  post =await newPost.save()
             console.log(post);
@@ -51,5 +43,17 @@ module.exports={
     
     getAdminPost:(req,res)=>{
         res.render('post');
+    },
+
+    getSingleBlogs: async (req, res) => {
+        try {
+            const singlePost = await Blog.findById(req.params.id)
+            res.render('single', {
+                singlePost
+            });
+        } catch (error) {
+            console.log(error);
+
+        }
     },
 }
