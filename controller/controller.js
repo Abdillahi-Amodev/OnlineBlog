@@ -32,7 +32,7 @@ module.exports={
         });
         try {
             const  post =await newPost.save()
-            console.log(post);
+            // console.log(post);
             res.send(post)
             
         } catch (error) {
@@ -41,8 +41,15 @@ module.exports={
         }
     },
     
-    getAdminPost:(req,res)=>{
-        res.render('post');
+    getAdminPost:async(req,res)=>{
+        try {
+            const posts = await Blog.find()
+            res.render('post',{
+                posts
+            });
+        } catch (error) {
+            
+        }
     },
 
     getSingleBlogs: async (req, res) => {

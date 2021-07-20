@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="up">
-        <h2> devAmo Blog</h2>
+        <h2> DevAmo Blog</h2>
         <div class="searchDiv">
             <form>
                 <input type="text" class="search" placeholder=" Search ...">
@@ -20,8 +20,17 @@
     </div>
     <div class="all-post">
         <% allpost.forEach(post=>{%>
-            <a href="/<%=post._id%>"><%=post.title%></a>
-            <p><%=post.description%></p>
+            <div class="one-post">
+                <div class="image">
+                    <img src="" alt="">
+                </div>
+                <div class="bodies">
+                    <a href="/<%=post._id%>"><%=post.title%></a>
+                    <p><%=post.description%></p>
+
+                </div>
+
+            </div>
           <%})%>
     </div>
 

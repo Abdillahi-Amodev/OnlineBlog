@@ -63,22 +63,34 @@
         <div class="postContainer">
             <div class="form-post"> 
                 <h3>Post A Blog</h3>
-                <form action="POST">
+                <form>
                     <input type="text" id='title' name='title' placeholder=" Title">
                     <input type="text" id='desc' name='description' placeholder=" Description">
                     <button type="submit">Send</button>
                 </form>
 
             </div>
-            <div class="postResulte">
-              <div>here</div>
-              <div>here</div>
-              <div>here</div>
-              <div>here</div>
-              <div>here</div>
-              <div>here</div>
-              <div>here</div>
-              <div>here</div>
+            <div class="postResulte" id='resulte'>
+        <%posts.forEach(post=>{%>
+            <div>
+                <h4><%=post.title%></h4>
+                <p><%=post.description%></p>
+              
+            </div>
+        
+                    <%})%>
+
+<!-- <div>
+here
+</div>
+<div>
+here
+</div>
+<div>
+here
+</div> -->
+              
+              
             </div>
         </div>
 
@@ -87,32 +99,34 @@
 </body>
 <script>
     const btn =document.querySelector('button')
-    const title=document.getElementById('title').value
-    const desc=document.getElementById('desc').value
-    const data={
-        title: title,
-        desc: desc
-    }
     btn.addEventListener('click',(e)=>{
         e.preventDefault();
-console.log(data);
-    //      fetch('/admin/post',{
-    //         method:'POST',
-    //         headers:{
+        const title=document.getElementById('title').value
+        const description=document.getElementById('desc').value
+        const data={
+            title,
+            description
+        }
+// console.log(data);
+
+         fetch('/admin/post',{
+            method:'POST',
+            headers:{
               
-    //           'Content-Type': 'application/json',
-    //         },
-    //         body:JSON.stringify(data)
-    //     }).then((res)=>{
-    //         return res.json();       
+              'Content-Type': 'application/json',
+            },
+            body:JSON.stringify(data)
+        }).then((res)=>{
+            return res.json();       
              
-    //     }).then((data)=>{
+        }).then((data)=>{
           
-    //         console.log(data)
-    //          alert(data)
-    //     }).catch((err)=>console.log(err))
+            console.log(data);
+            
+        }).catch((err)=>console.log(err))
               
-    // })
+    })
+
 </script>
 
 </html>
