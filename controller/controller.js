@@ -48,7 +48,7 @@ module.exports={
                 posts
             });
         } catch (error) {
-            
+            console.log(error);
         }
     },
 
