@@ -1,4 +1,5 @@
-.headers{
-    padding: 20px;
-    border: 1px solid green;
+.headers {
+  background-color: blue;
+  padding: 20px;
+  width: 100vw;
 }

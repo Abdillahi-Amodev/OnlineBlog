@@ -6,6 +6,7 @@ require('dotenv').config()
 
 app.use(express.static('public'))
 app.use(express.static('single'))
+
 app.set('view engine', 'ejs')
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
