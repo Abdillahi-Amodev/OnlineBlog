@@ -1,0 +1,17 @@
+.contente {
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+}
+.dashboardContente {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  grid-auto-rows: 200px;
+  grid-gap: 50px;
+  margin-left: 12%;
+  margin-top: 10px;
+}
+.dashboardContente > div {
+  border: 1px solid black;
+  padding: 10px;
+}
